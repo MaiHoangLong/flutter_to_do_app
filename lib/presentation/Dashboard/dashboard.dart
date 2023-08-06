@@ -16,7 +16,7 @@ class Dashboard extends StatelessWidget {
           actions: [
             TextButton(
               onPressed: () {
-                context.read<AuthBloc>().add(SignOutRequested());
+                _signOut(context);
               },
               child: const Text('Log Out'),
             )
@@ -48,4 +48,8 @@ class Dashboard extends StatelessWidget {
           ),
         ));
   }
+}
+
+void _signOut(BuildContext context) {
+  BlocProvider.of<AuthBloc>(context).add(SignOutRequested());
 }

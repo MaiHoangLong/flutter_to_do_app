@@ -1,3 +1,4 @@
+import 'package:bloc_auth/bloc/bloc/auth_bloc.dart';
 import 'package:bloc_auth/common/routes/app_route_const.dart';
 import 'package:bloc_auth/presentation/Dashboard/dashboard.dart';
 import 'package:bloc_auth/presentation/SignIn/sign_in.dart';
@@ -31,5 +32,10 @@ class AppRouter {
                 child: const SignUp(),
               )),
     ],
+    redirect: (context, state) {
+      if (state is Authenticated) {
+        return '/';
+      }
+    },
   );
 }

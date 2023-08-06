@@ -170,10 +170,4 @@ class _SignUpState extends State<SignUp> {
       );
     }
   }
-
-  void _authenticateWithGoogle(context) {
-    BlocProvider.of<AuthBloc>(context).add(
-      GoogleSignInRequested(),
-    );
-  }
 }
